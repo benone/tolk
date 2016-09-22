@@ -11,6 +11,7 @@ module Tolk
 
         locale_block_filter = Proc.new {
           |l| ['.', '..'].include?(l) ||
+            l.ends_with?('admin.yml') ||
             !l.ends_with?('.yml') ||
             l.match(/(.*\.){2,}/) # reject files of type xxx.en.yml
         }
